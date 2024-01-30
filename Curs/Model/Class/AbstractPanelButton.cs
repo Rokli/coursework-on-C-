@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Curs.Model.Class
 {
-    public abstract class RoleButton: Button
+    public abstract class AbstractPanelButton: Button
     {
+        public DateTime lastClickTime { get; set; }
         //точка перемещения
         Point DownPoint;
         //нажата ли кнопка мыши
         bool IsDragMode;
         bool isResizing;
-        public RoleButton(string FromFile)
+        public AbstractPanelButton(string FromFile)
         {
             Size = new Size(50, 50);
             BackgroundImageLayout = ImageLayout.Stretch;
@@ -62,12 +63,6 @@ namespace Curs.Model.Class
                 Location = new Point(Location.X + dp.X, Location.Y + dp.Y);
             }
             base.OnMouseMove(e);
-        }
-        protected override void OnDoubleClick(EventArgs e)
-        {
-            // Ваш код для обработки двойного нажатия мышкой на кнопку
-            MessageBox.Show("Двойной клик!");
-            base.OnDoubleClick(e);
         }
     }
 }
