@@ -11,6 +11,7 @@ namespace Curs.View.Interface
     {
         Button InputPanel { set; }
 
+        public void ClearPanel();
         LeftButton InputControls { set; }
     }
 }

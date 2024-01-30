@@ -10,15 +10,15 @@ namespace Curs.View.Class
 {
     public class MainView : Form, IMainView
     {
-        MainPanel panel { get; set; } = new MainPanel();
+        MainPanel _panel { get; set; } = new MainPanel();
 
-        public Button InputPanel { set => panel.Controls.Add(value); }
+        public Button InputPanel { set => _panel.Controls.Add(value); }
         public LeftButton InputControls { set => Controls.Add(value); }
 
         public MainView()
         {
             InitializeComponent();
-            Controls.Add(panel);
+            Controls.Add(_panel);
         }
 
 
@@ -32,5 +32,7 @@ namespace Curs.View.Class
             Name = "MainView";
             ResumeLayout(false);
         }
+
+        public void ClearPanel()=> _panel.Controls.Clear();  
     }
 }
