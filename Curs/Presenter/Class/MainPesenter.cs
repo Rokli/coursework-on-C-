@@ -23,12 +23,12 @@ namespace Curs.Presenter.Class
         public void InitializeComponent()
         {
             EventHandler create = Create;
-            LeftButton butt = new LeftButton(new Point(10, 0), "C:\\Users\\satal\\source\\repos\\Curs\\Curs\\Assets\\circle.png", create);
-            _mainView.InputControls = butt;
-            //_mainView.InputControls = new LeftButton(new Point(10, 60));
-            //_mainView.InputControls = new LeftButton(new Point(10, 120));
-            //_mainView.InputControls = new LeftButton(new Point(10, 180));
-            //_mainView.InputControls = new LeftButton(new Point(10, 240));
+            _mainView.InputControls = new LeftButton(new Point(10, 0), "C:\\Users\\satal\\source\\repos\\Curs\\Curs\\Assets\\circle.png", create);
+            _mainView.InputControls = new LeftButton(new Point(10, 60), "C:\\Users\\satal\\source\\repos\\Curs\\Curs\\Assets\\arrow-left.png", create);
+            _mainView.InputControls = new LeftButton(new Point(10, 120), "C:\\Users\\satal\\source\\repos\\Curs\\Curs\\Assets\\arrow-rigth.png", create);
+            _mainView.InputControls = new LeftButton(new Point(10, 180), "C:\\Users\\satal\\source\\repos\\Curs\\Curs\\Assets\\arrow-up.png", create);
+            _mainView.InputControls = new LeftButton(new Point(10, 240), "C:\\Users\\satal\\source\\repos\\Curs\\Curs\\Assets\\arrow-down.png", create);
+            _mainView.InputControls = new LeftButton(new Point(10, 300), "C:\\Users\\satal\\source\\repos\\Curs\\Curs\\Assets\\arrow-circle.png", create);
         }
         private void Create(object sender, EventArgs e)
         {

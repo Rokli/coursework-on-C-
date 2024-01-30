@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace Curs.Model.Class
 {
-    public class PanelButton: Button
+    public abstract class RoleButton: Button
     {
-        private DateTime lastClickTime;
         //точка перемещения
         Point DownPoint;
         //нажата ли кнопка мыши
         bool IsDragMode;
         bool isResizing;
-        public PanelButton(string FromFile) 
+        public RoleButton(string FromFile)
         {
-            Size = new Size(50,50);
+            Size = new Size(50, 50);
             BackgroundImageLayout = ImageLayout.Stretch;
             BackgroundImage = Image.FromFile(FromFile);
             FlatAppearance.BorderSize = 0;
@@ -24,7 +23,7 @@ namespace Curs.Model.Class
         }
         protected override void OnMouseDown(MouseEventArgs e)
         {
-            
+
             if (e.Button == MouseButtons.Left)
             {
                 if (e.Location.X > Width - 10 && e.Location.Y > Height - 10)
