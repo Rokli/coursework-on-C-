@@ -17,8 +17,12 @@ namespace Curs.Model.Class
         public AbstractPanelButton(string FromFile)
         {
             Size = new Size(50, 50);
-            BackgroundImageLayout = ImageLayout.Stretch;
-            BackgroundImage = Image.FromFile(FromFile);
+            if (!Distribution.DistributionImage(FromFile))
+            {
+                BackgroundImageLayout = ImageLayout.Stretch;
+                BackgroundImage = Image.FromFile(FromFile);
+            }else
+                Text = "Нажми на меня два раза!";
             FlatAppearance.BorderSize = 0;
             FlatStyle = FlatStyle.Flat;
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Curs.View.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,9 +27,10 @@ namespace Curs.Model.Class
             lastClickTime = DateTime.Now;
         }
         protected override void OnDoubleClick(EventArgs e)
-        {
-            // Ваш код для обработки двойного нажатия мышкой на кнопку
-            MessageBox.Show("Двойной клик!");
+        { 
+            ModuleText moduleText = new ModuleText(Text);
+            moduleText.ShowDialog();
+            Text = moduleText._textBox;
             base.OnDoubleClick(e);
         }
     }
