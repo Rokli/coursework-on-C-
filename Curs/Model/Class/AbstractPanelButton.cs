@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.DirectoryServices;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Curs.Model.Class
 {
-    public abstract class AbstractPanelButton: Button
+    public abstract class AbstractPanelButton : Button
     {
         public DateTime lastClickTime { get; set; }
         //точка перемещения
         Point DownPoint;
         //нажата ли кнопка мыши
-        bool IsDragMode;
-        bool isResizing;
+        private bool IsDragMode;
+        private bool isResizing;
+        public MouseEventHandler delete {  get; set; }  
         public AbstractPanelButton(string FromFile)
         {
             Size = new Size(50, 50);
@@ -41,6 +43,10 @@ namespace Curs.Model.Class
                     IsDragMode = true;
                     base.OnMouseDown(e);
                 }
+            }
+            else
+            {
+                delete?.Invoke(this, e);
             }
         }
 

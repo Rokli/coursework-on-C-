@@ -5,6 +5,7 @@ using Curs.View.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,9 +36,20 @@ namespace Curs.Presenter.Class
         }
         private void Create(object sender, EventArgs e)
         {
-            LeftButton butt  = sender as LeftButton;
-            _mainView.InputPanel = Distribution.DistributionButton(butt._fromFile);
+            MouseEventHandler delete = DeleteButton;
+            LeftButton butt = sender as LeftButton;
+            AbstractPanelButton button = Distribution.DistributionButton(butt._fromFile);
+            button.delete = delete;
+            _mainView.InputPanel = button;
         }
-        private void ClearPanel(object sender, EventArgs e)=> _mainView.ClearPanel();
+        private void ClearPanel(object sender, EventArgs e)=>_mainView.ClearPanel();
+
+        private void DeleteButton(object sender, MouseEventArgs e)
+        {
+            AbstractPanelButton butt = sender as AbstractPanelButton;
+            if (e.Button == MouseButtons.Right)
+                _mainView.RemovePanel = butt;
+            
+        }
     }
 }

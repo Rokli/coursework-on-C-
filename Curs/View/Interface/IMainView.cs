@@ -10,7 +10,7 @@ namespace Curs.View.Interface
     public  interface IMainView
     {
         Button InputPanel { set; }
-
+        Button RemovePanel { set; }
         public void ClearPanel();
         LeftButton InputControls { set; }
     }

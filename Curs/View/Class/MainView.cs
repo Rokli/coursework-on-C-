@@ -14,6 +14,7 @@ namespace Curs.View.Class
 
         public Button InputPanel { set => _panel.Controls.Add(value); }
         public LeftButton InputControls { set => Controls.Add(value); }
+        public Button RemovePanel { set => _panel.Controls.Remove(value); }
 
         public MainView()
         {
@@ -33,6 +34,6 @@ namespace Curs.View.Class
             ResumeLayout(false);
         }
 
-        public void ClearPanel()=> _panel.Controls.Clear();  
+        public void ClearPanel()=>_panel.Controls.Clear();
     }
 }
