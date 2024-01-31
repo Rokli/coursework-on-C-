@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.DirectoryServices;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -68,7 +69,6 @@ namespace Curs.Model.Class
             else if (IsDragMode)
             {
                 Point p = e.Location;
-                //вычисляем разницу в координатах между положением курсора и "нулевой" точкой кнопки
                 Point dp = new Point(p.X - DownPoint.X, p.Y - DownPoint.Y);
                 Location = new Point(Location.X + dp.X, Location.Y + dp.Y);
             }

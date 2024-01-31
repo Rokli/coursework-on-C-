@@ -1,10 +1,7 @@
 ﻿using Curs.Model.Class;
 using Curs.View.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
+using System.Xml;
 
 namespace Curs.View.Class
 {
@@ -15,7 +12,7 @@ namespace Curs.View.Class
         public Button InputPanel { set => _panel.Controls.Add(value); }
         public LeftButton InputControls { set => Controls.Add(value); }
         public Button RemovePanel { set => _panel.Controls.Remove(value); }
-
+        //public MainPanel SavePanel { get ; }
         public MainView()
         {
             InitializeComponent();
@@ -33,7 +30,10 @@ namespace Curs.View.Class
             Name = "MainView";
             ResumeLayout(false);
         }
-
+        //public void SavePanel()
+        //{
+        //    string json = JsonConverter.SerializeObject(myPanel, Formatting.Indented);
+        //}
         public void ClearPanel()=>_panel.Controls.Clear();
     }
 }

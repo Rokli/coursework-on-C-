@@ -11,7 +11,7 @@ namespace Curs
         {
             ApplicationConfiguration.Initialize();
             MainView view = new MainView();
-            MainPesenter presenter = new MainPesenter(view,new Model.Class.MainModel());
+            MainPesenter presenter = new MainPesenter(view);
             Application.Run(view);
         }
     }

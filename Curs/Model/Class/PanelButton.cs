@@ -30,7 +30,7 @@ namespace Curs.Model.Class
         { 
             ModuleText moduleText = new ModuleText(Text);
             moduleText.ShowDialog();
-            Text = moduleText._textBox;
+            Text = moduleText.TextBox;
             base.OnDoubleClick(e);
         }
     }
