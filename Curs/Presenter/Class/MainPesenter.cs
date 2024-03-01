@@ -23,6 +23,7 @@ namespace Curs.Presenter.Class
         {
             EventHandler create = Create;
             EventHandler clear = ClearPanel;
+           
             mainView.InputControls = new LeftButton(new Point(10, 10), "C:\\Users\\satal\\source\\repos\\Curs\\Curs\\Assets\\circle.png", create);
             mainView.InputControls = new LeftButton(new Point(10, 70), "C:\\Users\\satal\\source\\repos\\Curs\\Curs\\Assets\\arrow-left.png", create);
             mainView.InputControls = new LeftButton(new Point(10, 130), "C:\\Users\\satal\\source\\repos\\Curs\\Curs\\Assets\\arrow-rigth.png", create);
@@ -35,6 +36,7 @@ namespace Curs.Presenter.Class
             mainView.InputControls = new LeftButton(new Point(10, 550), "C:\\Users\\satal\\source\\repos\\Curs\\Curs\\Assets\\text.png", create);
             mainView.InputControls = new LeftButton(new Point(10, 550), "C:\\Users\\satal\\source\\repos\\Curs\\Curs\\Assets\\save.png", create);
             mainView.InputControls = new LeftButton(new Point(10, 610), "C:\\Users\\satal\\source\\repos\\Curs\\Curs\\Assets\\trash.png", clear);
+            mainView.InputControls = new LeftButton(new Point(10, 670), "C:\\Users\\satal\\source\\repos\\Curs\\Curs\\Assets\\save.png", clear);
         }
         private void Create(object sender, EventArgs e)
         {
@@ -45,7 +47,7 @@ namespace Curs.Presenter.Class
             mainView.InputPanel = button;
         }
         private void ClearPanel(object sender, EventArgs e)=>mainView.ClearPanel();
-        private void SavePanel(object sender, EventArgs e)=>
+        //private void SavePanel(object sender, EventArgs e)=>
 
         private void DeleteButton(object sender, MouseEventArgs e)
         {
