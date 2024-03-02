@@ -1,5 +1,4 @@
 using Curs.Presenter.Class;
-using Curs.Presenter.Interface;
 using Curs.View.Class;
 
 namespace Curs

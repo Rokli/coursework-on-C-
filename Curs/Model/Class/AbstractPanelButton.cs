@@ -10,15 +10,15 @@ namespace Curs.Model.Class
 {
     public abstract class AbstractPanelButton : Button
     {
+        public string _FromFile { get; set; }
         public DateTime lastClickTime { get; set; }
-        //точка перемещения
         Point DownPoint;
-        //нажата ли кнопка мыши
         private bool IsDragMode;
         private bool isResizing;
         public MouseEventHandler delete {  get; set; }  
         public AbstractPanelButton(string FromFile)
         {
+            _FromFile = FromFile;
             Size = new Size(50, 50);
             if (!Distribution.DistributionImage(FromFile))
             {
