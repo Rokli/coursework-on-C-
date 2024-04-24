@@ -10,7 +10,7 @@ namespace Curs.View.Class
     {
         MainPanel _panel { get; set; } = new MainPanel();
         public Button InputPanel { set => _panel.Controls.Add(value); }
-        public LeftButton InputControls { set => Controls.Add(value); }
+        public InterfaceButton InputControls { set => Controls.Add(value); }
         public Button RemovePanel { set => _panel.Controls.Remove(value); }
 
         public MainView()

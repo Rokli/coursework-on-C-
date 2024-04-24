@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Curs.Model.Class
 {
-    public class LeftButton : Button
+    public class InterfaceButton : Button
     {
         public string _fromFile { get; init; }
-        public LeftButton(Point location, string fromFile, EventHandler eventButt) 
+        public InterfaceButton(Point location, string fromFile, EventHandler eventButt) 
         {
             Click += eventButt;
             _fromFile = fromFile;

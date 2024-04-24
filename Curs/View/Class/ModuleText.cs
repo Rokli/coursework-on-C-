@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -12,11 +13,14 @@ namespace Curs.View.Class
 
         private TextBox? textBox1;
         private Button? button1;
+        public Point butt { get; private set; }
         public string? TextBox { get; private set; }
-        public ModuleText(string? text)
+        public ModuleText(string? text, Point point)
         {
+            butt = point;
             TextBox = text;
             InitializeComponent();
+            Location = point;
         }
         private void InitializeComponent()
         {

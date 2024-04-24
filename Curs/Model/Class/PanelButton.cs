@@ -28,7 +28,8 @@ namespace Curs.Model.Class
         }
         protected override void OnDoubleClick(EventArgs e)
         { 
-            ModuleText moduleText = new ModuleText(Text);
+            ModuleText moduleText = new ModuleText(Text, Location);
+            moduleText.Location = Location;
             moduleText.ShowDialog();
             Text = moduleText.TextBox;
             base.OnDoubleClick(e);

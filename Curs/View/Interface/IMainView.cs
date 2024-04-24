@@ -12,6 +12,6 @@ namespace Curs.View.Interface
         Button InputPanel { set; }
         Button RemovePanel { set; }
         public void ClearPanel();
-        LeftButton InputControls { set; }
+        InterfaceButton InputControls { set; }
     }
 }

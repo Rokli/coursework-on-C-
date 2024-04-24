@@ -14,7 +14,7 @@ namespace Curs.Model.Class
             AutoSize = true;
             Size = new System.Drawing.Size(520,590);
             Location = new Point(70,0);
-            BackColor = Color.Gray;
+            BackColor = Color.White;
             Anchor = AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom | AnchorStyles.Top;
         }
     }
