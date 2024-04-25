@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Curs.Model.Class
 {
-    public class SL
+    public class JsonSave
     {
         public List<Point> _buttLocation { get; set; } = new List<Point>();
         public List<Size> _buttSize { get; set; } = new List<Size>();

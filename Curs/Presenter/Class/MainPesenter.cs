@@ -8,7 +8,7 @@ namespace Curs.Presenter.Class
     {
         public IMainView _mainView { get; set; }
         public List<AbstractPanelButton> buttons { get; set; } = new List<AbstractPanelButton> { };
-        public SL sl { get; set; } = new SL();
+        public JsonSave sl { get; set; } = new JsonSave();
         public MainPesenter(IMainView mainView)
         {
             _mainView = mainView;
@@ -18,23 +18,19 @@ namespace Curs.Presenter.Class
         }
         public void InitializeComponent()
         {
-            EventHandler create = Create;
-            EventHandler clear = ClearPanel;
-            EventHandler save = SavePanel;
-           
-            _mainView.InputControls = new InterfaceButton(new Point(10, 10), "Assets\\circle.png", create);
-            _mainView.InputControls = new InterfaceButton(new Point(10, 70), "Assets\\arrow-left.png", create);
-            _mainView.InputControls = new InterfaceButton(new Point(10, 130), "Assets\\arrow-rigth.png", create);
-            _mainView.InputControls = new InterfaceButton(new Point(10, 190), "Assets\\arrow-up.png", create);
-            _mainView.InputControls = new InterfaceButton(new Point(10, 250), "Assets\\arrow-down.png", create);
-            _mainView.InputControls = new InterfaceButton(new Point(10, 310), "Assets\\arrow-circle-rigth.png", create);
-            _mainView.InputControls = new InterfaceButton(new Point(10, 370), "Assets\\arrow-circle-up.png", create);
-            _mainView.InputControls = new InterfaceButton(new Point(10, 430), "Assets\\arrow-circle-left.png", create);
-            _mainView.InputControls = new InterfaceButton(new Point(10, 490), "Assets\\arrow-circle-down.png", create);
-            _mainView.InputControls = new InterfaceButton(new Point(10, 550), "Assets\\text.png", create);
-            _mainView.InputControls = new InterfaceButton(new Point(10, 550), "Assets\\save.png", create);
-            _mainView.InputControls = new InterfaceButton(new Point(10, 610), "Assets\\trash.png", clear);
-            _mainView.InputControls = new InterfaceButton(new Point(10, 670), "Assets\\save.png", save);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 10), "Assets\\circle.png", Create);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 70), "Assets\\arrow-left.png", Create);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 130), "Assets\\arrow-rigth.png", Create);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 190), "Assets\\arrow-up.png", Create);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 250), "Assets\\arrow-down.png", Create);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 310), "Assets\\arrow-circle-rigth.png", Create);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 370), "Assets\\arrow-circle-up.png", Create);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 430), "Assets\\arrow-circle-left.png", Create);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 490), "Assets\\arrow-circle-down.png", Create);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 550), "Assets\\text.png", Create);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 550), "Assets\\save.png", Create);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 610), "Assets\\trash.png", ClearPanel);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 670), "Assets\\save.png", SavePanel);
         }
         private void Create(object sender, EventArgs e)
         {
@@ -61,7 +57,7 @@ namespace Curs.Presenter.Class
             StreamReader reader = new StreamReader(filepath);
             string json = reader.ReadToEnd();
             reader.Dispose();
-            SL tmp = JsonConvert.DeserializeObject<SL>(json);
+            JsonSave tmp = JsonConvert.DeserializeObject<JsonSave>(json);
             for (int i = 0; i < tmp._buttImage.Count; i++)
             {
                 AbstractPanelButton button = Distribution.DistributionButton(tmp._buttImage[i]);
