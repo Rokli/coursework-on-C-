@@ -20,7 +20,10 @@ namespace Curs.View.Class
             InitializeComponent();
         }
         public void ShowWindow()=>Show();
-        public void AddFuncForButton(EventHandler func) => CreateTable.Click += func;
+        public void AddFuncForInputButton(EventHandler func) => CreateTable.Click += func;
+        public void AddFuncForCheckButton(EventHandler func) => checkFSM.Click += func;
+
+        public void AddRichTextBox(string text) => richTextBox.Text += text + "\n";
         public int NumberInput()=> Convert.ToInt32(inputForTabel.Text);
 
         public bool CheckTextInput()
@@ -34,6 +37,7 @@ namespace Curs.View.Class
 
         public void SettingsTable(int number)
         {
+            table.AllowUserToAddRows = false;
             table.Visible = true;
             table.ColumnCount = 3;
             table.RowCount = number;

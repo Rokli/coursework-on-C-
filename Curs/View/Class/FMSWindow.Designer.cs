@@ -32,6 +32,10 @@
             label1 = new Label();
             table = new DataGridView();
             CreateTable = new Button();
+            label2 = new Label();
+            inputForFSM = new TextBox();
+            checkFSM = new Button();
+            richTextBox = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)table).BeginInit();
             SuspendLayout();
             // 
@@ -70,11 +74,48 @@
             CreateTable.Text = "Создать таблицу";
             CreateTable.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(22, 400);
+            label2.Name = "label2";
+            label2.Size = new Size(200, 20);
+            label2.TabIndex = 4;
+            label2.Text = "Ввод строки, для проверки:";
+            // 
+            // inputForFSM
+            // 
+            inputForFSM.Location = new Point(236, 397);
+            inputForFSM.Name = "inputForFSM";
+            inputForFSM.Size = new Size(142, 27);
+            inputForFSM.TabIndex = 5;
+            // 
+            // checkFSM
+            // 
+            checkFSM.Location = new Point(384, 383);
+            checkFSM.Name = "checkFSM";
+            checkFSM.Size = new Size(159, 55);
+            checkFSM.TabIndex = 6;
+            checkFSM.Text = "Проверить алгоритм";
+            checkFSM.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox
+            // 
+            richTextBox.Location = new Point(549, 39);
+            richTextBox.Name = "richTextBox";
+            richTextBox.Size = new Size(220, 341);
+            richTextBox.TabIndex = 7;
+            richTextBox.Text = "";
+            // 
             // FMSWindow
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(richTextBox);
+            Controls.Add(checkFSM);
+            Controls.Add(inputForFSM);
+            Controls.Add(label2);
             Controls.Add(CreateTable);
             Controls.Add(table);
             Controls.Add(label1);
@@ -92,5 +133,9 @@
         private Label label1;
         private DataGridView table;
         private Button CreateTable;
+        private Label label2;
+        private TextBox inputForFSM;
+        private Button checkFSM;
+        private RichTextBox richTextBox;
     }
 }

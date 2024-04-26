@@ -9,7 +9,9 @@ namespace Curs.View.Interface
     public interface IFMS
     {
         public void ShowWindow();
-        public void AddFuncForButton(EventHandler func);
+        public void AddFuncForInputButton(EventHandler func);
+        public void AddFuncForCheckButton(EventHandler func);
+        public void AddRichTextBox(string text);
         public int NumberInput();
         public bool CheckTextInput();
         public void SettingsTable(int number);
