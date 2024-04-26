@@ -23,9 +23,9 @@ namespace Curs.View.Class
         public void AddFuncForInputButton(EventHandler func) => CreateTable.Click += func;
         public void AddFuncForCheckButton(EventHandler func) => checkFSM.Click += func;
 
+        public DataGridViewRowCollection GetArrayRowColummTable() => table.Rows;
         public void AddRichTextBox(string text) => richTextBox.Text += text + "\n";
         public int NumberInput()=> Convert.ToInt32(inputForTabel.Text);
-
         public bool CheckTextInput()
         {
             if (string.IsNullOrEmpty(inputForTabel.Text))

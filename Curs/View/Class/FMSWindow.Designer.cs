@@ -85,7 +85,7 @@
             // 
             // inputForFSM
             // 
-            inputForFSM.Location = new Point(236, 397);
+            inputForFSM.Location = new Point(228, 397);
             inputForFSM.Name = "inputForFSM";
             inputForFSM.Size = new Size(142, 27);
             inputForFSM.TabIndex = 5;
