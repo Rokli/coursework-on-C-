@@ -13,6 +13,8 @@ namespace Curs.View.Interface
         public void AddFuncForCheckButton(EventHandler func);
         public DataGridViewRowCollection GetArrayRowColummTable();
         public void AddRichTextBox(string text);
+        public string GetInputCheck();
+        public void SelectionResult(bool selection);
         public int NumberInput();
         public bool CheckTextInput();
         public void SettingsTable(int number);
