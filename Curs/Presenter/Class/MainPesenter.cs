@@ -2,7 +2,7 @@
 using Curs.View.Class;
 using Curs.View.Interface;
 using Newtonsoft.Json;
-
+using Curs.Presenter;
 namespace Curs.Presenter.Class
 {
     public class MainPesenter
@@ -49,8 +49,8 @@ namespace Curs.Presenter.Class
 
         private void FMSShow(object sender, EventArgs e)
         {
-            FMSWindow fms = new FMSWindow();
-            fms.ShowDialog();
+            FSMPresenter fsmPresenter = new FSMPresenter(new FMSWindow());
+            fsmPresenter.ShowWindow();
         }
         private void DeleteButton(object sender, MouseEventArgs e)
         {

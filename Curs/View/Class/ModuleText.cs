@@ -46,7 +46,6 @@ namespace Curs.View.Class
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(147, 27);
             textBox1.TabIndex = 1;
-            textBox1.Text = TextBox;
             // 
             // ModuleText
             // 
