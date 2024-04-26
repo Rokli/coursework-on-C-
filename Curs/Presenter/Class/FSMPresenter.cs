@@ -108,16 +108,6 @@ namespace Curs.Presenter
         }
         public bool CheckForTable()
         {
-            foreach (DataGridViewRow row in _view.GetArrayRowColummTable())
-            {
-                foreach (DataGridViewCell columm in row.Cells)
-                {
-                    if (!Check(columm.Value.ToString()))
-                    {
-                        return false;
-                    }
-                }
-            }
             return true;
         }
         public bool Check(string str)

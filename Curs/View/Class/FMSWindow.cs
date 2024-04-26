@@ -33,13 +33,11 @@ namespace Curs.View.Class
         {
             if (selection)
             {
-                Successfully successfully = new Successfully();
-                successfully.Show();
+                MessageBox.Show("Алгоритм прошёл успешно");
             }
             else
             {
-                ErrorFSM errorFSM = new ErrorFSM();
-                errorFSM.Show();
+                MessageBox.Show("Неправильно введены данные");
             }
         }
         public bool CheckTextInput()
