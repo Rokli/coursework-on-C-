@@ -39,12 +39,21 @@ namespace Curs.Presenter
         }
         public void FSMStart(object sender, EventArgs e)
         {
-            keyValuePairs = new Dictionary<string, Dictionary<string, string>>();
-            states = new string[_view.NumberInputRow()];
-            TableDistribution();
-            CreateAlphabet();
-            CreateState();
-            FSMTest();
+            if (!CheckForTable())
+            {
+                ErrorFSM errorFSM = new ErrorFSM();
+                errorFSM.Show();
+            }
+            else
+            {
+                keyValuePairs = new Dictionary<string, Dictionary<string, string>>();
+                states = new string[_view.NumberInputRow()];
+                TableDistribution();
+                CreateAlphabet();
+                CreateState();
+                FSMTest();
+            }
+            
         }
         public void TableDistribution()
         {
@@ -83,6 +92,39 @@ namespace Curs.Presenter
             FSM fsm = new FSM(alphabet,states,_view.GetFisrtState(),[_view.GetEndState()],keyValuePairs);
             _view.SelectionResult(fsm.Start(_view.GetInputCheck()));
             Reset();
+            //FSM fsm = new FSM("01", ["q0", "q1"], "q0", ["q0"], new Dictionary<string, Dictionary<string, string>>
+            //{
+            //    ["q0"] = new Dictionary<string, string>
+            //    {
+            //        ["0"] = "q0",
+            //        ["1"] = "q0"
+            //    },
+            //    ["q1"] = new Dictionary<string, string>
+            //    {
+            //        ["0"] = "q1",
+            //        ["1"] = "q1"
+            //    },
+            //});
+        }
+        public bool CheckForTable()
+        {
+            foreach (DataGridViewRow row in _view.GetArrayRowColummTable())
+            {
+                foreach (DataGridViewCell columm in row.Cells)
+                {
+                    if (!Check(columm.Value.ToString()))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        public bool Check(string str)
+        {
+            if (string.IsNullOrEmpty(str))
+                return false;
+            return true;
         }
         public void Reset()
         {
