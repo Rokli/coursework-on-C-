@@ -10,6 +10,8 @@ namespace Curs.View.Interface
     {
         public void ShowWindow();
         public void AddFuncForButton(EventHandler func);
-        public string TextInput();
+        public int NumberInput();
+        public bool CheckTextInput();
+        public void SettingsTable(int number);
     }
 }

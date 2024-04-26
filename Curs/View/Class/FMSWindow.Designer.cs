@@ -30,9 +30,9 @@
         {
             inputForTabel = new TextBox();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            table = new DataGridView();
             CreateTable = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)table).BeginInit();
             SuspendLayout();
             // 
             // inputForTabel
@@ -51,15 +51,15 @@
             label1.TabIndex = 1;
             label1.Text = "Сколько значений в алфавите?";
             // 
-            // dataGridView1
+            // table
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(22, 39);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(521, 341);
-            dataGridView1.TabIndex = 2;
-            dataGridView1.Visible = false;
+            table.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            table.Location = new Point(22, 39);
+            table.Name = "table";
+            table.RowHeadersWidth = 51;
+            table.Size = new Size(521, 341);
+            table.TabIndex = 2;
+            table.Visible = false;
             // 
             // CreateTable
             // 
@@ -76,12 +76,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(CreateTable);
-            Controls.Add(dataGridView1);
+            Controls.Add(table);
             Controls.Add(label1);
             Controls.Add(inputForTabel);
             Name = "FMSWindow";
             Text = "FMS";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)table).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -90,7 +90,7 @@
 
         private TextBox inputForTabel;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView table;
         private Button CreateTable;
     }
 }

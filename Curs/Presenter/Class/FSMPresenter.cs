@@ -14,18 +14,19 @@ namespace Curs.Presenter
         public FSMPresenter(IFMS view)
         {
             _view = view;
+            _view.AddFuncForButton(CreateTable);
         }
         public void ShowWindow()=>_view.ShowWindow();
         public void CreateTable(object sender, EventArgs e)
         {
-            if(_view.TextInput == null)
+            if(!_view.CheckTextInput())
             {
                 Error error = new Error();
                 error.Show();
             }
             else
             {
-
+                _view.SettingsTable(_view.NumberInput());
             }
         }
     }
