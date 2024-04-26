@@ -37,12 +37,11 @@
             checkFSM = new Button();
             label3 = new Label();
             alphabetInput = new TextBox();
-            alphabetEnter = new Button();
             label4 = new Label();
             inputForTabelColumn = new TextBox();
             label5 = new Label();
             firsStateInput = new TextBox();
-            endState = new TextBox();
+            endStateInput = new TextBox();
             label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)table).BeginInit();
             SuspendLayout();
@@ -123,15 +122,6 @@
             alphabetInput.Size = new Size(142, 27);
             alphabetInput.TabIndex = 9;
             // 
-            // alphabetEnter
-            // 
-            alphabetEnter.Location = new Point(382, 413);
-            alphabetEnter.Name = "alphabetEnter";
-            alphabetEnter.Size = new Size(159, 27);
-            alphabetEnter.TabIndex = 10;
-            alphabetEnter.Text = "Ввести";
-            alphabetEnter.UseVisualStyleBackColor = true;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -164,12 +154,12 @@
             firsStateInput.Size = new Size(142, 27);
             firsStateInput.TabIndex = 14;
             // 
-            // endState
+            // endStateInput
             // 
-            endState.Location = new Point(226, 479);
-            endState.Name = "endState";
-            endState.Size = new Size(142, 27);
-            endState.TabIndex = 16;
+            endStateInput.Location = new Point(226, 479);
+            endStateInput.Name = "endStateInput";
+            endStateInput.Size = new Size(142, 27);
+            endStateInput.TabIndex = 16;
             // 
             // label6
             // 
@@ -185,13 +175,12 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(815, 560);
-            Controls.Add(endState);
+            Controls.Add(endStateInput);
             Controls.Add(label6);
             Controls.Add(firsStateInput);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(inputForTabelColumn);
-            Controls.Add(alphabetEnter);
             Controls.Add(alphabetInput);
             Controls.Add(label3);
             Controls.Add(checkFSM);
@@ -219,12 +208,11 @@
         private Button checkFSM;
         private Label label3;
         private TextBox alphabetInput;
-        private Button alphabetEnter;
         private Label label4;
         private TextBox inputForTabelColumn;
         private Label label5;
         private TextBox firsStateInput;
-        private TextBox endState;
+        private TextBox endStateInput;
         private Label label6;
     }
 }

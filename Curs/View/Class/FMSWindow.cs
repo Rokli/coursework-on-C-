@@ -28,6 +28,7 @@ namespace Curs.View.Class
         public int NumberInputColumn() => Convert.ToInt32(inputForTabelColumn.Text);
         public string AlphabetInput() => alphabetInput.Text;
         public string GetFisrtState()=>firsStateInput.Text;
+        public string GetEndState() => endStateInput.Text;
         public void SelectionResult(bool selection)
         {
             if (selection)

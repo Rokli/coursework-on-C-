@@ -17,6 +17,7 @@ namespace Curs.View.Interface
         public void SelectionResult(bool selection);
         public int NumberInputRow();
 
+        public string GetEndState();
         public string AlphabetInput();
         public bool CheckTextInput();
         public void SettingsTable(int row, int column);
