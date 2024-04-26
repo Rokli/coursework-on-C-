@@ -9,14 +9,17 @@ namespace Curs.View.Interface
     public interface IFMS
     {
         public void ShowWindow();
+        public string GetFisrtState();
         public void AddFuncForInputButton(EventHandler func);
         public void AddFuncForCheckButton(EventHandler func);
         public DataGridViewRowCollection GetArrayRowColummTable();
-        public void AddRichTextBox(string text);
         public string GetInputCheck();
         public void SelectionResult(bool selection);
-        public int NumberInput();
+        public int NumberInputRow();
+
+        public string AlphabetInput();
         public bool CheckTextInput();
-        public void SettingsTable(int number);
+        public void SettingsTable(int row, int column);
+        public int NumberInputColumn();
     }
 }

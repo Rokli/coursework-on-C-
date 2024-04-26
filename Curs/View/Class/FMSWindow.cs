@@ -24,11 +24,12 @@ namespace Curs.View.Class
         public void AddFuncForCheckButton(EventHandler func) => checkFSM.Click += func;
         public string GetInputCheck() => inputForFSM.Text;
         public DataGridViewRowCollection GetArrayRowColummTable() => table.Rows;
-        public void AddRichTextBox(string text) => richTextBox.Text += text + "\n";
-        public int NumberInput()=> Convert.ToInt32(inputForTabel.Text);
+        public int NumberInputRow()=> Convert.ToInt32(inputForTabelRow.Text);
+        public int NumberInputColumn() => Convert.ToInt32(inputForTabelColumn.Text);
+        public string AlphabetInput() => alphabetInput.Text;
+        public string GetFisrtState()=>firsStateInput.Text;
         public void SelectionResult(bool selection)
         {
-            richTextBox.Text += "1";
             if (selection)
             {
                 Successfully successfully = new Successfully();
@@ -42,19 +43,25 @@ namespace Curs.View.Class
         }
         public bool CheckTextInput()
         {
-            if (string.IsNullOrEmpty(inputForTabel.Text))
+            if (string.IsNullOrEmpty(inputForTabelRow.Text))
                 return false;
-            if (Convert.ToInt32(inputForTabel.Text) < 0)
+            if (string.IsNullOrEmpty(inputForTabelColumn.Text))
+                return false;
+            if (Convert.ToInt32(inputForTabelRow.Text) < 0)
+                return false;
+            if (Convert.ToInt32(inputForTabelColumn.Text) < 0)
+                return false;
+            if (Convert.ToInt32(inputForTabelColumn.Text) % 2 == 0)
                 return false;
             return true;
         }
 
-        public void SettingsTable(int number)
+        public void SettingsTable(int row, int column)
         {
             table.AllowUserToAddRows = false;
             table.Visible = true;
-            table.ColumnCount = 3;
-            table.RowCount = number;
+            table.ColumnCount = column;
+            table.RowCount = row;
         }
         
     }
