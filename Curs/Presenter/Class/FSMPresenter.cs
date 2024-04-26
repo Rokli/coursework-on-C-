@@ -14,7 +14,7 @@ namespace Curs.Presenter
         public FSMPresenter(IFMS view)
         {
             _view = view;
-            _view.AddFuncForButton(CreateTable);
+            _view.AddFuncForInputButton(CreateTable);
         }
         public void ShowWindow()=>_view.ShowWindow();
         public void CreateTable(object sender, EventArgs e)
