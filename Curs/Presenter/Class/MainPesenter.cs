@@ -1,4 +1,5 @@
 ﻿using Curs.Model.Class;
+using Curs.View.Class;
 using Curs.View.Interface;
 using Newtonsoft.Json;
 
@@ -29,8 +30,9 @@ namespace Curs.Presenter.Class
             _mainView.InputControls = new InterfaceButton(new Point(10, 490), "Assets\\arrow-circle-down.png", Create);
             _mainView.InputControls = new InterfaceButton(new Point(10, 550), "Assets\\text.png", Create);
             _mainView.InputControls = new InterfaceButton(new Point(10, 550), "Assets\\save.png", Create);
-            _mainView.InputControls = new InterfaceButton(new Point(10, 610), "Assets\\trash.png", ClearPanel);
-            _mainView.InputControls = new InterfaceButton(new Point(10, 670), "Assets\\save.png", SavePanel);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 610), "Assets\\computer.png", FMSShow);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 670), "Assets\\trash.png", ClearPanel);
+            _mainView.InputControls = new InterfaceButton(new Point(10, 730), "Assets\\save.png", SavePanel);
         }
         private void Create(object sender, EventArgs e)
         {
@@ -44,6 +46,12 @@ namespace Curs.Presenter.Class
         }
         private void ClearPanel(object sender, EventArgs e)=>_mainView.ClearPanel();
         private void SavePanel(object sender, EventArgs e)=>sl.Save(buttons, "Json\\save.json");
+
+        private void FMSShow(object sender, EventArgs e)
+        {
+            FMSWindow fms = new FMSWindow();
+            fms.ShowDialog();
+        }
         private void DeleteButton(object sender, MouseEventArgs e)
         {
             AbstractPanelButton butt = sender as AbstractPanelButton;
