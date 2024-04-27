@@ -29,8 +29,7 @@ namespace Curs.Presenter
         {
             if(!_view.CheckTextInput())
             {
-                Error error = new Error();
-                error.Show();
+                MessageBox.Show("Неправильно введены данные");
             }
             else
             {
@@ -39,21 +38,12 @@ namespace Curs.Presenter
         }
         public void FSMStart(object sender, EventArgs e)
         {
-            if (!CheckForTable())
-            {
-                ErrorFSM errorFSM = new ErrorFSM();
-                errorFSM.Show();
-            }
-            else
-            {
-                keyValuePairs = new Dictionary<string, Dictionary<string, string>>();
-                states = new string[_view.NumberInputRow()];
-                TableDistribution();
-                CreateAlphabet();
-                CreateState();
-                FSMTest();
-            }
-            
+             keyValuePairs = new Dictionary<string, Dictionary<string, string>>();
+             states = new string[_view.NumberInputRow()];
+             TableDistribution();
+             CreateAlphabet();
+             CreateState();
+             FSMTest();            
         }
         public void TableDistribution()
         {
@@ -105,10 +95,6 @@ namespace Curs.Presenter
             //        ["1"] = "q1"
             //    },
             //});
-        }
-        public bool CheckForTable()
-        {
-            return true;
         }
         public bool Check(string str)
         {

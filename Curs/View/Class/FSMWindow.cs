@@ -12,10 +12,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Curs.View.Class
 {
-    public partial class FMSWindow : Form, IFMS
+    public partial class FSMWindow : Form, IFMS
     {
 
-        public FMSWindow()
+        public FSMWindow()
         {
             InitializeComponent();
         }
@@ -32,13 +32,9 @@ namespace Curs.View.Class
         public void SelectionResult(bool selection)
         {
             if (selection)
-            {
                 MessageBox.Show("Алгоритм прошёл успешно");
-            }
             else
-            {
                 MessageBox.Show("Неправильно введены данные");
-            }
         }
         public bool CheckTextInput()
         {

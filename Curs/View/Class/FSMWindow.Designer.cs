@@ -1,6 +1,6 @@
 ﻿namespace Curs.View.Class
 {
-    partial class FMSWindow
+    partial class FSMWindow
     {
         /// <summary>
         /// Required designer variable.

@@ -49,7 +49,7 @@ namespace Curs.Presenter.Class
 
         private void FMSShow(object sender, EventArgs e)
         {
-            FSMPresenter fsmPresenter = new FSMPresenter(new FMSWindow());
+            FSMPresenter fsmPresenter = new FSMPresenter(new FSMWindow());
             fsmPresenter.ShowWindow();
         }
         private void DeleteButton(object sender, MouseEventArgs e)
