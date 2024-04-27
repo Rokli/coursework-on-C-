@@ -1,4 +1,5 @@
-﻿using Curs.View.Interface;
+﻿using Curs.Model.Class;
+using Curs.View.Interface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,10 +19,11 @@ namespace Curs.View.Class
         public FSMWindow()
         {
             InitializeComponent();
+            exitButton.Click += ExitWindow;
         }
         public void ShowWindow()=>Show();
-        public void AddFuncForInputButton(EventHandler func) => CreateTable.Click += func;
-        public void AddFuncForCheckButton(EventHandler func) => checkFSM.Click += func;
+        public void AddFuncForInputButton(EventHandler func) => CreateTableButton.Click += func;
+        public void AddFuncForCheckButton(EventHandler func) => checkFSMButton.Click += func;
         public string GetInputCheck() => inputForFSM.Text;
         public DataGridViewRowCollection GetArrayRowColummTable() => table.Rows;
         public int NumberInputRow()=> Convert.ToInt32(inputForTabelRow.Text);
@@ -58,6 +60,10 @@ namespace Curs.View.Class
             table.ColumnCount = column;
             table.RowCount = row;
         }
-        
+
+        public void ExitWindow(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

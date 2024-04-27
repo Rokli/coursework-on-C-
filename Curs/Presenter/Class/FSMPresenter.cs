@@ -82,19 +82,6 @@ namespace Curs.Presenter
             FSM fsm = new FSM(alphabet,states,_view.GetFisrtState(),[_view.GetEndState()],keyValuePairs);
             _view.SelectionResult(fsm.Start(_view.GetInputCheck()));
             Reset();
-            //FSM fsm = new FSM("01", ["q0", "q1"], "q0", ["q0"], new Dictionary<string, Dictionary<string, string>>
-            //{
-            //    ["q0"] = new Dictionary<string, string>
-            //    {
-            //        ["0"] = "q0",
-            //        ["1"] = "q0"
-            //    },
-            //    ["q1"] = new Dictionary<string, string>
-            //    {
-            //        ["0"] = "q1",
-            //        ["1"] = "q1"
-            //    },
-            //});
         }
         public bool Check(string str)
         {
@@ -111,3 +98,16 @@ namespace Curs.Presenter
         }
     }
 }
+//FSM fsm = new FSM("01", ["q0", "q1"], "q0", ["q0"], new Dictionary<string, Dictionary<string, string>>
+//{
+//    ["q0"] = new Dictionary<string, string>
+//    {
+//        ["0"] = "q0",
+//        ["1"] = "q0"
+//    },
+//    ["q1"] = new Dictionary<string, string>
+//    {
+//        ["0"] = "q1",
+//        ["1"] = "q1"
+//    },
+//});

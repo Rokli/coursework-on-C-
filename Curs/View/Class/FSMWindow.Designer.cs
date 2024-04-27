@@ -31,10 +31,10 @@
             inputForTabelRow = new TextBox();
             label1 = new Label();
             table = new DataGridView();
-            CreateTable = new Button();
+            CreateTableButton = new Button();
             label2 = new Label();
             inputForFSM = new TextBox();
-            checkFSM = new Button();
+            checkFSMButton = new Button();
             label3 = new Label();
             alphabetInput = new TextBox();
             label4 = new Label();
@@ -43,6 +43,7 @@
             firsStateInput = new TextBox();
             endStateInput = new TextBox();
             label6 = new Label();
+            exitButton = new Button();
             ((System.ComponentModel.ISupportInitialize)table).BeginInit();
             SuspendLayout();
             // 
@@ -68,18 +69,18 @@
             table.Location = new Point(20, 78);
             table.Name = "table";
             table.RowHeadersWidth = 51;
-            table.Size = new Size(529, 312);
+            table.Size = new Size(783, 312);
             table.TabIndex = 2;
             table.Visible = false;
             // 
-            // CreateTable
+            // CreateTableButton
             // 
-            CreateTable.Location = new Point(301, 6);
-            CreateTable.Name = "CreateTable";
-            CreateTable.Size = new Size(159, 68);
-            CreateTable.TabIndex = 3;
-            CreateTable.Text = "Создать таблицу";
-            CreateTable.UseVisualStyleBackColor = true;
+            CreateTableButton.Location = new Point(301, 6);
+            CreateTableButton.Name = "CreateTableButton";
+            CreateTableButton.Size = new Size(159, 68);
+            CreateTableButton.TabIndex = 3;
+            CreateTableButton.Text = "Создать таблицу";
+            CreateTableButton.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -97,14 +98,14 @@
             inputForFSM.Size = new Size(142, 27);
             inputForFSM.TabIndex = 5;
             // 
-            // checkFSM
+            // checkFSMButton
             // 
-            checkFSM.Location = new Point(382, 512);
-            checkFSM.Name = "checkFSM";
-            checkFSM.Size = new Size(159, 27);
-            checkFSM.TabIndex = 6;
-            checkFSM.Text = "Проверить алгоритм";
-            checkFSM.UseVisualStyleBackColor = true;
+            checkFSMButton.Location = new Point(382, 512);
+            checkFSMButton.Name = "checkFSMButton";
+            checkFSMButton.Size = new Size(159, 27);
+            checkFSMButton.TabIndex = 6;
+            checkFSMButton.Text = "Проверить алгоритм";
+            checkFSMButton.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -170,11 +171,22 @@
             label6.TabIndex = 15;
             label6.Text = "Конечное состояние:";
             // 
-            // FMSWindow
+            // exitButton
+            // 
+            exitButton.Location = new Point(676, 512);
+            exitButton.Name = "exitButton";
+            exitButton.Size = new Size(127, 27);
+            exitButton.TabIndex = 17;
+            exitButton.Text = "Выйти";
+            exitButton.UseVisualStyleBackColor = true;
+            // 
+            // FSMWindow
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(815, 560);
+            ControlBox = false;
+            Controls.Add(exitButton);
             Controls.Add(endStateInput);
             Controls.Add(label6);
             Controls.Add(firsStateInput);
@@ -183,14 +195,14 @@
             Controls.Add(inputForTabelColumn);
             Controls.Add(alphabetInput);
             Controls.Add(label3);
-            Controls.Add(checkFSM);
+            Controls.Add(checkFSMButton);
             Controls.Add(inputForFSM);
             Controls.Add(label2);
-            Controls.Add(CreateTable);
+            Controls.Add(CreateTableButton);
             Controls.Add(table);
             Controls.Add(label1);
             Controls.Add(inputForTabelRow);
-            Name = "FMSWindow";
+            Name = "FSMWindow";
             Text = "FMS";
             ((System.ComponentModel.ISupportInitialize)table).EndInit();
             ResumeLayout(false);
@@ -202,10 +214,10 @@
         private TextBox inputForTabelRow;
         private Label label1;
         private DataGridView table;
-        private Button CreateTable;
+        private Button CreateTableButton;
         private Label label2;
         private TextBox inputForFSM;
-        private Button checkFSM;
+        private Button checkFSMButton;
         private Label label3;
         private TextBox alphabetInput;
         private Label label4;
@@ -214,5 +226,6 @@
         private TextBox firsStateInput;
         private TextBox endStateInput;
         private Label label6;
+        private Button exitButton;
     }
 }

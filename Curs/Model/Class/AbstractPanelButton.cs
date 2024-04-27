@@ -74,5 +74,20 @@ namespace Curs.Model.Class
             }
             base.OnMouseMove(e);
         }
+        protected override void OnMouseWheel(MouseEventArgs e)
+        {
+            base.OnMouseWheel(e);
+
+            if (e.Delta > 0)
+            {
+                // Увеличить z-index
+                Parent.Controls.SetChildIndex(this, this.Parent.Controls.Count - 1);
+            }
+            else if (e.Delta < 0)
+            {
+                // Уменьшить z-index
+                Parent.Controls.SetChildIndex(this, 0);
+            }
+        }
     }
 }
